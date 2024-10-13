@@ -1,0 +1,1 @@
+data = open('7').read().strip()

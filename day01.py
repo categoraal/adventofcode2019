@@ -1,15 +1,9 @@
-import math as m
-input = open('input1').read().split('\n')
-input = [int(i) for i in input]
-print(input[0])
-print(type(input[0]))
-
-res = 0
-for i in input:
+d = [int(i) for i in open('1').read().split('\n')]
+r1=r2=0
+for i in d:
+    r1 += i//3-2
     while i > 0:
-        i = m.floor(i/3)-2
+        i = i//3-2
         if i > 0:
-            res += i
-    #res += m.floor(i/3)-2
-
-print(res)
+            r2 += i
+print(r1,r2)

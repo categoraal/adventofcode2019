@@ -23,7 +23,7 @@ def co(nfuel):
             inv = inventory[chem]
             if inv < 0:
                 n,components,amounts = reactions[chem]
-                mult = -(inv // n)
+                mult = -(inv//n)
                 inventory[chem] += mult*n
                 for comp,amount in zip(components,amounts):
                     if comp == 'ORE':
@@ -36,8 +36,8 @@ LIMIT = 1E12
 print(co(1))
 
 def secant(f0,f1):
+    x0 = co(f0)
     while f0 != f1:
-        x0 = co(f0)
         x1 = co(f1)
         a = (x1-x0)/(f1-f0)
         b = x0-a*f0
@@ -45,4 +45,4 @@ def secant(f0,f1):
         f0,f1 = f1,f2
     return int(f2)
 
-print(secant(1,100000000000))
+print(secant(1,2))

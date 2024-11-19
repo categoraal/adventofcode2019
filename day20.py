@@ -65,6 +65,8 @@ queue = [(start,0)]
 dkaart = {(start,0):0}
 breakflag = False
 for pos,depth in queue:
+    if depth > len(jumps)/2:
+        continue
     if breakflag: break
     r,c = pos
     d = dkaart[(pos,depth)]
